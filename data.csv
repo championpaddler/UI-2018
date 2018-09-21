@@ -1,0 +1,17 @@
+,,,,,,
+1,Time   ,level,  Process                           ,          User                                ,,Message
+2,07/12/17 12:26,Info,doc_ add_queue_item_doc_env,MBOBOC\MADa,,doc_add_queue_item_doc_env execution ended
+3,07/12/17 12:24,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution started
+4,07/12/17 12:02,Fatal,test_cancel_doc_env,MBOBOC\MADa,,www.uipath.com
+5,07/12/17 12:02,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution ended
+6,07/12/17 11:42,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution started
+8,07-12-17 11:40,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution ended
+9,07-12-17 11:40,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution started
+10,07-12-17 11:33,Info,LogMessage_doc_env,MBOBOC\MADa,,LogMessage_doc_env execution ended
+11,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,No Transaction Data
+,,,,,,Set transaction progress :Object reference not
+12,07-12-17 11:28,Error,using_progress_doc_env,MBOBOC\MADa,,set to an instance of an object.
+13,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,using_progress_doc_env execution ended
+14,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,using_progress_doc_env execution started
+15,07-12-17 11:26,Info,move_to_in_progress_doc_e nv,MBOBOC\MADa,,move_to_in_progress_doc_env execution ended
+16,07-12-17 11:13,Info,lJustlogging_doc _env,MBOBOC\MADa,,lJustlogging_doc_env execution ended
