@@ -26,6 +26,17 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
+<style>
+
+#cards{
+    box-shadow: 10px 10px 5px grey;
+  }
+  #cards:hover{
+    box-shadow: 20px 20px 5px black;
+    cursor: pointer;
+  
+  }
+</style>
 <body>
         <script type="text/javascript">
           if(localStorage.getItem("admin")==null)
@@ -293,8 +304,8 @@
 
 
 
-           <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
+           <div class="col-sm-6 col-lg-3" >
+                <div class="card text-white bg-flat-color-1" id="cards">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
                             <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
@@ -302,9 +313,8 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="/errors">View Logs</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -323,8 +333,8 @@
             </div>
             <!--/.col-->
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-2">
+            <div class="col-sm-6 col-lg-3" >
+                <div class="card text-white bg-flat-color-2" id="cards">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
                             <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
@@ -332,9 +342,8 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="/info">View Logs </a>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -352,8 +361,8 @@
             </div>
             <!--/.col-->
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-3">
+            <div class="col-sm-6 col-lg-3" >
+                <div class="card text-white bg-flat-color-3" id="cards">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
                             <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
@@ -361,9 +370,8 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="/critical">view Logs</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -381,8 +389,8 @@
             </div>
             <!--/.col-->
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-4">
+            <div class="col-sm-6 col-lg-3" >
+                <div class="card text-white bg-flat-color-4" id="cards">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
                             <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
@@ -409,6 +417,7 @@
                 </div>
             </div>
 
+            
             
             <!--/.col-->
 

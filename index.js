@@ -4,6 +4,7 @@ var express = require('express')
 var app = express()
 
 const data=require('./controllers/data')
+const html=require('./controllers/file')
 // respond with "hello world" when a GET request is made to the homepage
 
 app.get('/', function (req, res) {
@@ -13,29 +14,26 @@ app.get('/', function (req, res) {
 
 
 //routes
-app.use('/', express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 
-app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname + '/home.html'))
+app.get('/home', function (req, res) { res.sendFile(path.join(__dirname + '/home.html'))})
+app.get('/index', function (req, res) {res.sendFile(path.join(__dirname + '/index.html'))})
+app.get('/login', function (req, res) {res.sendFile(path.join(__dirname + '/public/login.html'))})
+app.get('/errors', html.render)
+app.get('/info', html.render)
+app.get('/fatal', html.render)
+app.get('/warning', html.render)
+app.get('/api/data/:id',data.data);
 
-})
-app.get('/index', function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'))
+app.get('*', function (req, res) {res.redirect('/index')});
 
-})
-app.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/login.html'))
-
-})
+    
 
 //api's
-app.get('/api/data',data.data);
 
-app.get('*', function (req, res) {
-    res.redirect('/index')
-});
+
 
 
 

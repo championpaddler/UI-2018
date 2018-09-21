@@ -37,10 +37,10 @@ function random (min, max) {
     var ctx = document.getElementById( "trafficChart" );
     //ctx.height = 200;
     var dataset1;
-    $.get('/api/data',function(data){
-       dataset1=data;
-       console.log(dataset1)
-    })
+    // $.get('/api/data',function(data){
+    //    dataset1=data;
+    //    console.log(dataset1)
+    // })
 
     // var myChart = new Chart( ctx, {
     //     type: 'line',

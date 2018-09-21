@@ -7,8 +7,9 @@ exports.data=(req,res)=>{
 csv()
 .fromFile(csvFilePath)
 .then((jsonObj)=>{
-var arr = [];
 
+//preprocess data
+    var arr = [];
 for(var r of jsonObj)
 {  var t=[]
      for (var key in r) {
@@ -17,7 +18,43 @@ for(var r of jsonObj)
  }
  arr.push(t) 
 }
+var datasend=[];
 
-   res.send(arr.slice(1,))
+if(req.params.id==="errors")
+{
+    
+    for (var i of arr)
+    {
+       if(i[2]!=""&&i[2]=="Error")
+       {
+           datasend.push(i);
+       }
+    }
+
+}
+else if(req.params.id==="info")
+{
+  
+    for (var i of arr)
+    {
+       if(i[2]!=""&&i[2]=="Info")
+       {
+           datasend.push(i);
+       }
+    }
+}
+else if(req.params.id==="fatal")
+{
+  
+    for (var i of arr)
+    {
+       if(i[2]!=""&&i[2]=="Fatal")
+       {
+           datasend.push(i);
+       }
+    }
+
+}
+res.send(datasend)
 })
 }

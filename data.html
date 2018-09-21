@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
@@ -26,12 +28,65 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}</style>
 <body>
         <script type="text/javascript">
           if(localStorage.getItem("admin")==null)
           {
               window.location.href="/login"
           }
+         data=window.location.href.split('/');
+         urlload=data[data.length-1];
+         console.log('/api/data/'+urlload)
+         $.get('api/data/'+urlload,function(data){
+             console.log(data)
+             var tableRef = document.getElementById('customers');
+for (var i in data)
+{
+    var newRow = tableRef.insertRow(i);
+    for(var j in data[i] )
+    {
+        var newCell = newRow.insertCell(j);
+var newText = document.createTextNode(data[i][j]);
+  newCell.appendChild(newText);
+    }
+}
+// Insert a row in the table at row index 0
+
+
+// Insert a cell in the row at index 0
+
+// Append a text node to the cell
+
+         })
         </script>
 
 
@@ -278,44 +333,28 @@
                 </div>
             </div>
         </div>
-
-        
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+        <table id="customers">
+            
+            
+          </table>
          <!-- .content -->
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
 
 
-    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
-    <script>
-        ( function ( $ ) {
-            "use strict";
-
-            jQuery( '#vmap' ).vectorMap( {
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: [ '#1de9b6', '#03a9f5' ],
-                normalizeFunction: 'polynomial'
-            } );
-        } )( jQuery );
-    </script>
+    
+   
+    
 
 </body>
 </html>
