@@ -47,7 +47,7 @@ function random (min, max) {
     //     data: {
     //         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
        
-    //    datasets:dataset1     //     datasets: [
+    // //    datasets:dataset1     //     datasets: [
     //     //     {
     //     //       label: 'My First dataset',
     //     //       backgroundColor: convertHex(brandInfo, 10),

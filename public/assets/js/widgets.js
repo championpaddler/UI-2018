@@ -167,7 +167,7 @@
             type: 'line',
             datasets: [ {
                 data: [78, 81, 80, 45, 34, 12, 40],
-                label: 'Dataset',
+                label: 'Critical Errors',
                 backgroundColor: 'rgba(255,255,255,.2)',
                 borderColor: 'rgba(255,255,255,.55)',
             }, ]

@@ -18,6 +18,6 @@ for(var r of jsonObj)
  arr.push(t) 
 }
 
-   res.send(arr)
+   res.send(arr.slice(1,))
 })
 }

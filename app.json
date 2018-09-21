@@ -1,7 +1,7 @@
 {
     "name": "UIPath 2018 ",
     "description": "A barebones Node.js app using Express 4",
-    "repository": "https://github.com/sk9331657/UIPath-App-2018",
+    "repository": "https://github.com/sk9331657/UI-2018",
     "logo": "https://node-js-sample.herokuapp.com/node.png",
     "keywords": ["node", "express", "static"]
   }
