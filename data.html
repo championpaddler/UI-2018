@@ -39,13 +39,7 @@
     border: 1px solid #ddd;
     padding: 8px;
 }
-th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-}
+
 #customers tr:nth-child(even){background-color: #f2f2f2;}
 
 #customers tr:hover {background-color: #ddd;}
@@ -56,7 +50,9 @@ th {
     text-align: left;
     background-color: #4CAF50;
     color: white;
-}</style>
+}
+
+</style>
 <body>
         <script type="text/javascript">
           if(localStorage.getItem("admin")==null)
@@ -71,8 +67,11 @@ th {
              var tableRef = document.getElementById('customers');
 for (var i in data)
 {
-    var newRow = tableRef.insertRow(i);
-    for(var j in data[i] )
+    var newRow = tableRef.insertRow(parseInt(i)+1);
+    var newCell = newRow.insertCell(0);
+var newText = document.createTextNode(+(i)+1);
+  newCell.appendChild(newText);
+    for(var j=1;j<data[i].length;j++)
     {
         var newCell = newRow.insertCell(j);
 var newText = document.createTextNode(data[i][j]);
@@ -333,13 +332,18 @@ var newText = document.createTextNode(data[i][j]);
                 </div>
             </div>
         </div>
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-          </tr>
+        
+       
         <table id="customers">
-            
+            <tr >
+                <th id="head">Serial</th>
+                <th id="head">Timestamp</th>
+                <th id="head">Level</th>
+                <th id="head">Path</th>
+                <th id="head">User</th>
+                <th id="head">Company</th>
+                <th id="head">Message</th>
+              </tr>  
             
           </table>
          <!-- .content -->
