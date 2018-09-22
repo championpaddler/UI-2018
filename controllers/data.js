@@ -55,6 +55,18 @@ else if(req.params.id==="fatal")
     }
 
 }
+else if(req.params.id==="critical")
+{
+  
+    for (var i of arr)
+    {
+       if(i[2]!=""&&i[2]=="critical")
+       {
+           datasend.push(i);
+       }
+    }
+
+}
 res.send(datasend)
 })
 }

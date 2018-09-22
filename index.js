@@ -23,6 +23,7 @@ app.get('/index', function (req, res) {res.sendFile(path.join(__dirname + '/inde
 app.get('/login', function (req, res) {res.sendFile(path.join(__dirname + '/public/login.html'))})
 app.get('/errors', html.render)
 app.get('/info', html.render)
+app.get('/critical', html.render)
 app.get('/fatal', html.render)
 app.get('/warning', html.render)
 app.get('/api/data/:id',data.data);
