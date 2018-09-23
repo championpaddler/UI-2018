@@ -9,9 +9,9 @@
 9,07-12-17 11:40,Info,test_cancel_doc_env,MBOBOC\MADa,,test_cancel_doc_env execution started
 10,07-12-17 11:33,Info,LogMessage_doc_env,MBOBOC\MADa,,LogMessage_doc_env execution ended
 11,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,No Transaction Data
-,,,,,,Set transaction progress :Object reference not
 12,07-12-17 11:28,Error,using_progress_doc_env,MBOBOC\MADa,,set to an instance of an object.
 13,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,using_progress_doc_env execution ended
 14,07-12-17 11:28,Info,using_progress_doc_env,MBOBOC\MADa,,using_progress_doc_env execution started
 15,07-12-17 11:26,Info,move_to_in_progress_doc_e nv,MBOBOC\MADa,,move_to_in_progress_doc_env execution ended
 16,07-12-17 11:13,Info,lJustlogging_doc _env,MBOBOC\MADa,,lJustlogging_doc_env execution ended
+16,07-12-17 11:13,Error,lJustlogging_doc _env,MBOBOC\MADa,,lJustlogging_doc_env execution ended

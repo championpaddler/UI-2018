@@ -57,54 +57,41 @@
              url: 'https://demo.uipath.com/api/Account', type: "POST", data: '{"tenancyName":"Deepak_Prakash","usernameOrEmailAddress":"deepakprakash2811@gmail.com", "password": "test1234"}', contentType: "application/json; charset=utf-8", dataType: "json", success: function (data) {
                  console.log(data.result)
                  
-         console.log("https://demo.uipath.com/odata/RobotLogs?$filter=Level%20eq%20"+"'"+urlload+"'")
                  localStorage.setItem("token", data.result);
                  $.ajax({
-                     url: "https://demo.uipath.com/odata/RobotLogs?$filter=Level%20eq%20"+"'"+urlload+"'",
+                     url: "https://demo.uipath.com/odata/Settings",
                      headers: {
                          "Authorization": "Bearer" + " " + localStorage.getItem("token")
                      }
                      , success: function (dta) {
-                         final = dta.value;
-                         console.log(final);
-                         var tableRef = document.getElementById('customers');
-                         var col = [];
-                         for (var i = 0; i < final.length; i++) {
-                             for (var key in final[i]) {
-                                 if (col.indexOf(key) === -1) {
-                                     col.push(key);
-                                 }
-                             }
-                         }
-         
-                         for (var i = 0; i < final.length; i++) {
-         
-                             tr = tableRef.insertRow(-1);
-         
-                             for (var j = 0; j < col.length; j++) {
-                            var tabCell = tr.insertCell(j);
-                                 
-                                     if (col[j] === "RawMessage") {
-                                         tabCell.innerHTML = "<a href='/'>View Message</a>";
-                                     }
-                                     else {
-                                         tabCell.innerHTML = final[i][col[j]];
-         
-                                     }
-         
-                                 
-         
-         
-         
-                             }
-                         }
-         
-                     }
-                 });
+                        final=dta.value;
+
+                         
+for(var r=0;r<final.length;r++)
+                     {
+                   var table=document.getElementById("customers");
+
+                        var tr = document.createElement("tr");
+var td = document.createElement("td");
+var txt = document.createTextNode(final[r]['Name']);
+
+td.appendChild(txt);
+tr.appendChild(td);
+var td = document.createElement("td");
+
+var txt = document.createTextNode(final[r]['Value']);
+
+td.appendChild(txt);
+tr.appendChild(td);
+table.appendChild(tr);
+
+                    }
+                 
          
          
              }
          });
+                 }        });
          
       </script>
       <!-- Left Panel -->
@@ -140,19 +127,12 @@
                         </li>
                       
     
-                        <h3 class="menu-title">OverAll Section</h3><!-- /.menu-title -->
     <ul>
             <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-laptop"></i>Logs</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="/Error">Error</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="/Info">/Info</a></li>
-                        <li><i class="fa fa-bars"></i><a href="/Warn">Warn</a></li>
-                        <li><i class="fa fa-bars"></i><a href="/Critical">Critcal</a></li>
-    
-                      
-                    </ul>
+                    <a href="/Settings" class="dropdown-toggle" >
+                        <i class="menu-icon fa fa-laptop"></i>Settings</a>
+                </li>
+               
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -297,17 +277,8 @@
          </div>
          <div style="overflow-x:auto;">
             <table id="customers">
-               <tr>
-                  <th id="head">Level</th>
-                  <th id="head">Identity System</th>
-                  <th id="head">Environment</th>
-                  <th id="head">Timestamp</th>
-                  <th id="head">Message Generated</th>
-                  <th id="head">Job Key</th>
-                  <th id="head">Message Contents</th>
-                  <th id="head">Robo Name</th>
-                  <th id="head">Id</th>
-               </tr>
+
+
             </table>
          </div>
          <!-- .content -->

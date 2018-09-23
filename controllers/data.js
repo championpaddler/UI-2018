@@ -2,7 +2,8 @@ const csv=require('csvtojson')
 var path=require('path')
 exports.data=(req,res)=>{
     
-    const csvFilePath=path.join(__dirname+'/../data.csv')
+  
+  const csvFilePath=path.join(__dirname+'/../data.csv')
     console.log(csvFilePath)
 csv()
 .fromFile(csvFilePath)
@@ -68,5 +69,50 @@ else if(req.params.id==="critical")
 
 }
 res.send(datasend)
+
+
+
+if(req.params.id==="count")
+{  
+    var count=[0,0,0,0,0];
+    
+    for (var i of arr)
+    {
+       if(i[2]!=""&&i[2]=="Error")
+       {
+           count[0]=count[0]+1;
+       }
+    
+
+
+
+   
+       if(i[2]!=""&&i[2]=="Info")
+       {
+        count[1]=count[1]+1;
+       }
+  
+  if(i[2]!=""&&i[2]=="Fatal")
+       {
+          
+        count[2]=count[2]+1;
+
+       }
+
+  
+       if(i[2]!=""&&i[2]=="critical")
+       {
+        count[3]=count[3]+1;
+       }
+    }
+
+
+}
+
 })
+
+
+
+
+
 }
