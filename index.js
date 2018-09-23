@@ -48,6 +48,6 @@ app.get('*', function (req, res) {res.redirect('/index')});
 
 
 
-app.listen(3000, function () {
+app.listen(3000||process.env.PORT, function () {
     console.log('http://localhost:3000')
 });
